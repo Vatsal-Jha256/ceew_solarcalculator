@@ -2922,13 +2922,13 @@ if st.button("Submit"):
     #st.write(f"System Capx cost: {format_indian_currency(Capx_cost)}")
 
     # Display the System NPV
-    #st.write(f"System NPV: {format_indian_currency(net_savings - Capx_cost)}")
+    #st.write(f"System NPV: {format_indian_currency(net_savings - Capx_cost-total_om_cost)}")
 
     st.metric(label="Payback Period", value=f"{payback_period} years")
 
     st.metric(label="Internal Rate of Return (IRR)", value=f"{irr:.2%}")
 
-    st.metric(label="Lifetime savings", value=format_indian_currency(net_savings))
+    st.metric(label="Lifetime savings", value=format_indian_currency(net_savings+Capx_cost+total_om_cost))
 
     st.metric(label="Lifetime avoided emissions", value=f"{(total_dg_emi - total_emi) / 1000:.0f} tCO2")
 
