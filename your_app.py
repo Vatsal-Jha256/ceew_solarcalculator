@@ -2916,7 +2916,7 @@ if st.button("Submit"):
     #print(f"Internal Rate of Return (IRR): {irr:.2%}")
 
     #Dashboard Data
-    net_savings=total_cost_dg_grid-total_c+Capx_cost
+    net_savings=total_cost_dg_grid-total_c+Capx_cost+total_om_cost
 
     # Display the System CAPX Cost
     #st.write(f"System Capx cost: {format_indian_currency(Capx_cost)}")
@@ -2928,7 +2928,7 @@ if st.button("Submit"):
 
     st.metric(label="Internal Rate of Return (IRR)", value=f"{irr:.2%}")
 
-    st.metric(label="Lifetime savings", value=format_indian_currency(net_savings+Capx_cost+total_om_cost))
+    st.metric(label="Lifetime savings", value=format_indian_currency(net_savings))
 
     st.metric(label="Lifetime avoided emissions", value=f"{(total_dg_emi - total_emi) / 1000:.0f} tCO2")
 
